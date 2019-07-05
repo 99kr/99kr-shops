@@ -27,6 +27,26 @@ Citizen.CreateThread(function()
     end
 end)
 
+--[[ Loop for checking if player is too far away, then empty basket ]] --
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(1000)
+        if payAmount > 0 then
+            for shop = 1, #Config.Locations do
+                local blip = Config.Locations[shop]["blip"]
+                local dist = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), blip["x"], blip["y"], blip["z"], true)
+                if dist <= 20.0 then
+                    if dist >= 12.0 then
+                        pNotify("You left the store, your basket is now empty!", "error", 2500)
+                        payAmount = 0
+                        Basket = {}
+                    end
+                end
+            end
+        end
+    end
+end)
+
 --[[ Check what to do ]]--
 OpenAction = function(action, shelf, text)
     if action["value"] == "checkout" then
