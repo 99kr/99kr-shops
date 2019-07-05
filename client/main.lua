@@ -86,7 +86,7 @@ Citizen.CreateThread(function()
                 SetBlipAsShortRange(blip["id"], true)
 
                 BeginTextCommandSetBlipName("shopblip")
-                AddTextEntry("shopblip", "Shop ".. i)
+                AddTextEntry("shopblip", "Shop")
                 EndTextCommandSetBlipName(blip["id"])
             end
         end
