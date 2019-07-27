@@ -6,7 +6,7 @@ INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
 	
 	('cheesebows', 'OLW Ostbågar', -1, 0, 1),
 	('chips', 'OLW 3xLök Chips', -1, 0, 1),
-	('Marabou Mjölkchoklad', 'marabou', -1, 0, 1),
+	('marabou', 'Marabou Mjölkchoklad', -1, 0, 1),
 	
 	('pizza', 'Kebab Pizza', -1, 0, 1),
 	('burger', 'Bacon Burgare', -1, 0, 1),
