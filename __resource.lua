@@ -5,6 +5,7 @@ description '99kr-shops'
 client_scripts {
     '@es_extended/locale.lua',
     'locales/en.lua',
+    'locales/tr.lua',
     'config.lua',
     'client/main.lua',
     'client/shop.lua',
@@ -13,6 +14,7 @@ client_scripts {
 server_scripts {
     '@es_extended/locale.lua',
     'locales/en.lua',
+    'locales/tr.lua',
     'config.lua',
     'server/main.lua',
 }
