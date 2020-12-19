@@ -19,7 +19,7 @@ AddEventHandler('99kr-shops:Cashier', function(price, basket, account)
         xPlayer.addInventoryItem(basket[i]["value"], basket[i]["amount"])
     end
     
-    pNotify('You bought products for <span style="color: green">$' .. price .. '</span>', 'success', 3000)
+    pNotify(_U('99kr_shop_bought', price), 'success', 3000)
 
 end)
 
