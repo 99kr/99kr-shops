@@ -19,10 +19,9 @@
 
 [ Requirements ]
 
-- ESX
+- es_extended
 - esx_menu_default
-- pNotify
 
 [ Video ]
 
-- https://streamable.com/e7z1l
+- <https://streamable.com/e7z1l>

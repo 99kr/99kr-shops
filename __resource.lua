@@ -21,6 +21,5 @@ server_scripts {
 
 dependencies {
     'es_extended',
-    'esx_menu_default',
-    'pNotify'
+    'esx_menu_default'
 }

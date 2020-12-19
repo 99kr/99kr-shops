@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
                 local dist = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), blip["x"], blip["y"], blip["z"], true)
                 if dist <= 20.0 then
                     if dist >= 12.0 then
-                        pNotify(_U("99kr_shop_left_store"), "error", 2500)
+                        ESX.ShowHelpNotification(_U("99kr_shop_left_store"))
                         payAmount = 0
                         Basket = {}
                     end
@@ -53,7 +53,7 @@ OpenAction = function(action, shelf, text)
         if payAmount > 0 and #Basket then
             CashRegister(text)
         else
-            pNotify(_U('99kr_shop_dont_have_anything'), 'error', 1500)
+            ESX.ShowHelpNotification(_U('99kr_shop_dont_have_anything'))
         end
     else
         ShelfMenu(text, shelf)
@@ -105,7 +105,7 @@ CashRegister = function(titel)
                                     Basket = {}
                                     menu2.close()
                                 else
-                                    pNotify(_U('99kr_shop_dont_have_money'), 'error', 1500)
+                                    ESX.ShowHelpNotification(_U('99kr_shop_dont_have_money'))
                                 end
                             end, payAmount, data2.current["value"])
                         end,
@@ -155,7 +155,7 @@ ShelfMenu = function(titel, shelf)
                 })
             end
             payAmount = payAmount + data.current["price"] * data.current.value
-            pNotify(_U('99kr_shop_put_in_basket', data.current.value, data.current["realLabel"]), 'alert', 1500)           
+            ESX.ShowHelpNotification(_U('99kr_shop_put_in_basket', data.current.value, data.current["realLabel"]))     
         end,
     function(data, menu)
         menu.close()
@@ -211,7 +211,7 @@ OpenBasket = function()
                     Basket = {}
                     payAmount = 0
                     menu.close()
-                    pNotify(_U('99kr_shop_removed_everything'), "error", 2500)
+                    ESX.ShowHelpNotification(_U('99kr_shop_removed_everything'))    
                 end
                 if data.current.value == "item_menu" then
                     menu.close()
@@ -231,7 +231,7 @@ OpenBasket = function()
                         },
                         function(data2, menu2)
                             if data2.current["value"] == "deleteItem" then
-                                pNotify(_U('99kr_shop_removed_x', Basket[index]["amount"], Basket[index]["label"]), "alert", 2500)
+                                ESX.ShowHelpNotification(_U('99kr_shop_removed_x', Basket[index]["amount"], Basket[index]["label"]))
                                 payAmount = payAmount - (Basket[index]["amount"] * Basket[index]["price"])
                                 table.remove(Basket, index)
                                 OpenBasket()
