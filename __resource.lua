@@ -20,5 +20,7 @@ server_scripts {
 }
 
 dependencies {
-	'es_extended'
+    'es_extended',
+    'esx_menu_default',
+    'pNotify'
 }
