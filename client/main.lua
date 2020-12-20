@@ -93,17 +93,6 @@ Citizen.CreateThread(function()
     end
 end)
 
---[[ Function to trigger pNotify event for easier use :) ]]--
-pNotify = function(message, messageType, messageTimeout)
-	TriggerEvent("pNotify:SendNotification", {
-        text = message,
-		type = messageType,
-		queue = "shopcl",
-		timeout = messageTimeout,
-		layout = "topRight"
-	})
-end
-
 Marker = function(pos)
     DrawMarker(25, pos["x"], pos["y"], pos["z"] - 0.98, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.75, 0.75, 0.75, 200, 200, 200, 60, false, false, 2, false, nil, nil, false)
     DrawMarker(25, pos["x"], pos["y"], pos["z"] - 0.98, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 0.8, 0.8, 200, 200, 200, 60, false, false, 2, false, nil, nil, false)
