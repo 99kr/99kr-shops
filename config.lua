@@ -1,5 +1,5 @@
 Config = {}
-Config.Locale  = 'tr'
+Config.Locale  = 'en'
 Config.Locations = {
     [1] = {
         ["shelfs"] = {
