@@ -5,9 +5,9 @@ Basket = {}
 
 --[[ Gets the ESX library ]]--
 ESX = nil 
-Citizen.CreateThread(function()
+CreateThread(function()
     while ESX == nil do
-        Citizen.Wait(10)
+        Citizen.Wait(1)
 
         TriggerEvent("esx:getSharedObject", function(obj)
             ESX = obj
@@ -52,7 +52,7 @@ DeleteCashier = function()
     end
 end
 
-Citizen.CreateThread(function()
+CreateThread(function()
     local defaultHash = 416176080
     for i=1, #Config.Locations do
         local cashier = Config.Locations[i]["cashier"]
@@ -72,7 +72,7 @@ Citizen.CreateThread(function()
 end)
 
 --[[ Creates cashiers and blips ]]--
-Citizen.CreateThread(function()
+CreateThread(function()
     for i=1, #Config.Locations do
         local blip = Config.Locations[i]["blip"]
 
@@ -112,7 +112,7 @@ end
 --[[ Deletes the peds when the resource stops ]]--
 AddEventHandler('onResourceStop', function(resourceName)
     if resourceName == GetCurrentResourceName() then
-        TriggerServerEvent('esx:clientLog', "[99kr-shops]: Deleting peds...")
+        print("[99kr-shops]: Deleting peds...")
         DeleteCashier()
     end
 end)
